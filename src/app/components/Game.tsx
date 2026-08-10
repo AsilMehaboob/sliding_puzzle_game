@@ -31,7 +31,7 @@ const Puzzle = () => {
   const [isConfettiLaunched, setIsConfettiLaunched] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
-  const [currentLevel, setCurrentLevel] = useState(2016);
+  const [currentLevel, setCurrentLevel] = useState(2026);
   const [isGameComplete, setIsGameComplete] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -121,6 +121,18 @@ const Puzzle = () => {
           "/images/png/2024_2.png",
           "/images/png/2024_3.png",
           "/images/png/2024_4.png",
+        ],
+        2025: [
+          "/images/png/2025_1.png",
+          "/images/png/2025_2.png",
+          "/images/png/2025_3.png",
+          "/images/png/2025_4.png",
+        ],
+        2026: [
+          "/images/png/2026_1.png",
+          "/images/png/2026_2.png",
+          "/images/png/2026_3.png",
+          "/images/png/2026_4.png",
         ],
       };
 
@@ -391,7 +403,7 @@ const Puzzle = () => {
         
           const madeWithText = "Made with ";
           const heartIcon = "❤‍🔥";
-          const footerText = " Excel 2024";
+          const footerText = " Excel 2026";
         
           p.textSize(fontSizeFooter);
           p.textAlign(p.LEFT, 
@@ -458,7 +470,7 @@ const Puzzle = () => {
               
               const tl = gsap.timeline({
                 onComplete: () => {
-                  if (currentLevel < 2024) {
+                  if (currentLevel < 2026) {
                     setCurrentLevel(prev => prev + 1);
                     setIsPuzzleCompleted(false);
                     initializePuzzle();
@@ -603,7 +615,7 @@ const Puzzle = () => {
             <div className="bg-[#110E1B] bg-opacity-90 backdrop-blur-md text-white w-screen h-screen flex flex-col justify-center items-center">
               <div className="mt-4">
                 <h1 className="text-3xl mr-14 font-satoshi text-left ml-8 top-6 mr sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
-                  {splitTextIntoLetters("Congratulations! You've completed all levels and uncovered Excel's history from 2016 to 2024.")}
+                  {splitTextIntoLetters("Congratulations! You've completed all levels and uncovered Excel's history from 2016 to 2026.")}
                 </h1>
                 <p className="mt-4 pt-7 text-right font-satoshi bottom-12 mr-5 text-3xl sm:text-xl font-semibold">
                   Total time: <span className="text-[#FF5E79]">{formatTime(elapsedTime)}</span>. Incredible job!
